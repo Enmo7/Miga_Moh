@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>المراقب الصحي الذكي</title>
+
+  <!-- Google Fonts Link for Cairo font -->
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  
+  <style>
+    body {
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(to bottom, #40e0d0, #ffffff); /* Turquoise to white */
+      font-family: 'Cairo', sans-serif; /* Apply Cairo font */
+      text-align: center;
+      padding: 0; /* Removed unnecessary padding */
+    }
+    h1 {
+      color: #333;
+      font-size: 48px; /* Make the main title larger */
+      font-weight: bold; /* Make the main title bold */
+      padding-top: 50px;
+    }
+    /* Logo at the top-left */
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px; /* Adjust the logo size */
+      height: auto;
+    }
+    .box {
+      position: absolute; /* Position it absolutely on the page */
+      top: 160px; /* Adjust this value for desired vertical position */
+      background-color: #006f6a; /* Dark turquoise color */
+      border-radius: 30px; /* Rounded corners */
+      padding: 20px; /* Space inside the box */
+      width: 250px; /* Set a fixed width for the box */
+      text-align: center; /* Center the text inside the box */
+      font-size: 22px; /* Font size inside the box */
+      color: white; /* White text */
+      font-weight: bold; /* Make the text bold */
+    }
+    /* Right box */
+    .box-right {
+      right: 100px; /* Position the first box on the right side */
+    }
+    /* Left box */
+    .box-left {
+      left: 100px; /* Position the second box on the left side */
+    }
+    /* Right Table styling */
+    .table-right {
+      position: absolute;
+      top: 280px; /* 20px below the right box */
+      right: 20px; /* 20px from the right side */
+      width: calc(40% - 70px); /* Set the table width to 50% of the page minus 70px */
+      border-collapse: collapse;
+      margin-top: 20px; /* 20px gap between the box and the table */
+      text-align: center;
+      height: calc(40vh - 100px); /* Table extends to the bottom of the page */
+    }
+    td {
+      padding: 20px;
+      font-size: 18px;
+    }
+    .image-cell img {
+      width: 50px; /* Set the image size for logo */
+      height: 50px;
+      object-fit: contain; /* Maintain aspect ratio without stretching */
+      background-color: transparent; /* Ensure no background color */
+    }
+
+    /* Left Table styling */
+    .table-left {
+      position: absolute;
+      top: 350px; /* 20px below the left box */
+      left: 0px; /* Position the table on the left side */
+      width: calc(40% - 70px); /* Set the table width */
+      border-collapse: collapse;
+      margin-top: 20px; /* 20px gap between the box and the table */
+      text-align: center;
+      height: calc(50vh - 100px); /* Table extends to the bottom of the page */
+    }
+    
+    /* Menu Button and Dropdown */
+    .menu-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #006f6a;
+      color: white;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    .menu-options {
+      display: none;
+      position: absolute;
+      top: 60px;
+      right: 20px;
+      background-color: white;
+      border: 1px solid #006f6a;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+    }
+
+    .menu-options div {
+      padding: 10px;
+      cursor: pointer;
+      font-size: 16px;
+      color: #006f6a;
+    }
+
+    .menu-options div:hover {
+      background-color: #f0f0f0;
+    }
+  </style>
+</head>
+<body>
+  <!-- Logo at the top-left -->
+  <img src="D:\moh\Jops\mostaqel\Moaaz\WebSite\logo.png" alt="Logo" class="logo">
+  
+  <h1>المراقب الصحي الذكي</h1>
+
+  <!-- First box on the right -->
+  <div class="box box-right">
+    <p>بيانات القياسات الحيوية</p>
+  </div>
+
+  <!-- Second box on the left -->
+  <div class="box box-left">
+    <p>المؤشرات والمتابعات الصحية</p>
+  </div>
+
+  <!-- Right Table below the right box -->
+  <div class="table-right">
+    <table>
+      <tbody>
+        <tr>
+          <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Heart rate.png" alt="Logo 1"></td>
+          <td>معدل ضربات القلب</td>
+          <td>80 bpm</td>
+        </tr>
+        <tr>
+          <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Blood oxygen.png" alt="Logo 2"></td>
+          <td>نسبة الاكسجين بالدم</td>
+          <td>98%</td>
+        </tr>
+        <tr>
+          <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Temperature.png" alt="Logo 3"></td>
+          <td>درجة الحرارة</td>
+          <td>37°C</td>
+        </tr>
+        <tr>
+          <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Sweat rate.png" alt="Logo 4"></td>
+          <td>معدل التعرق</td>
+          <td>5%</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Left Table below the left box -->
+  <div class="table-left">
+    <table>
+      <tbody>
+        <tr>
+          <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Fall Detection.png" alt="Logo 5"></td>
+          <td>اكتشاف السقوط</td>
+          <td>فعال</td>
+        </tr>
+        <tr>
+          <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Seizures.png" alt="Logo 6"></td>
+          <td>النوبات العصبية</td>
+          <td>لا يوجد</td>
+        </tr>
+        <tr>
+          <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Mood.png" alt="Logo 7"></td>
+          <td>الحالة المزاجية</td>
+          <td>مستقر</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Menu Button and Options -->
+  <div class="menu-button" onclick="toggleMenu()">خيارات</div>
+
+  <div class="menu-options" id="menu-options">
+    <div onclick="window.location.href='data.html'">سجل البيانات</div>
+    <div onclick="window.location.href='reports.html'">التقارير المجمعة</div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      var menu = document.getElementById('menu-options');
+      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+    }
+  </script>
+
+</body>
+</html>
