@@ -9,15 +9,7 @@ import time
 app = Flask(__name__)
 
 # Firebase configuration
-config = {
-    'apiKey': "AIzaSyDZCCMjd003FcPDRcik5jCHCEQL56pkeFY",
-    'authDomain': "jsonfile-esp32-mohiot.firebaseapp.com",
-    'databaseURL': "https://jsonfile-esp32-mohiot-default-rtdb.europe-west1.firebasedatabase.app",
-    'projectId': "jsonfile-esp32-mohiot",
-    'storageBucket': "jsonfile-esp32-mohiot.firebasestorage.app",
-    'messagingSenderId': "710233105459",
-    'appId': "1:710233105459:web:6a5dd9b611e6f558c36f46"
-}
+config = {}
 firebase_app = firebase.FirebaseApplication(config['databaseURL'], None)
 
 # Load CSV data
