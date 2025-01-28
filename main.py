@@ -96,5 +96,5 @@ def index():
 sensor_thread = threading.Thread(target=fetch_sensor_data, daemon=True)
 sensor_thread.start()
 
-if __name__ == '__main__':
-    app.run(debug=True)
+# if __name__ == '__main__':
+#     app.run(debug=True)
