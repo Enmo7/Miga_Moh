@@ -20,13 +20,13 @@ config = {
 firebase = firebase.FirebaseApplication(config['databaseURL'], None)
 
 # Load CSV data
-csv_data = pd.read_csv('D:\moh\Jops\mostaqel\Moaaz\AI Codes\sugar_level.csv')
+csv_data = pd.read_csv('sugar_level.csv')
 sugar_levels = csv_data['Sugar level']  # Column name in your CSV file
 current_csv_index = 0  # To keep track of the current position in the CSV file
 
 # Load models
-Seizure_Detection_model = keras.models.load_model(r"D:\moh\Jops\mostaqel\Moaaz\AI Codes\seizure_detection.h5")
-Fall_Detection_model = keras.models.load_model(r"D:\moh\Jops\mostaqel\Moaaz\AI Codes\Fall_Detection.h5")
+Seizure_Detection_model = keras.models.load_model("seizure_detection.h5")
+Fall_Detection_model = keras.models.load_model("Fall_Detection.h5")
 
 # Function to get the next sugar level
 def get_next_sugar_level():
