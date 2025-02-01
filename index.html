@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المراقب الصحي الذكي</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المراقب الصحي الذكي</title>
 
-  <!-- Google Fonts Link for Cairo font -->
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  
-  <style>
-    body {
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+       body {
       height: 100vh;
       margin: 0;
       background: linear-gradient(to bottom, #40e0d0, #ffffff); /* Turquoise to white */
@@ -120,95 +119,103 @@
     .menu-options div:hover {
       background-color: #f0f0f0;
     }
-  </style>
-</head>
+    </style>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  </head>
 <body>
-  <!-- Logo at the top-left -->
-  <img src="logo.png" alt="Logo" class="logo">
-  
-  <h1>المراقب الصحي الذكي</h1>
+    <img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/logo.png" alt="Logo" class="logo">
 
-  <!-- First box on the right -->
-  <div class="box box-right">
-    <p>بيانات القياسات الحيوية</p>
-  </div>
+    <h1>المراقب الصحي الذكي</h1>
 
-  <!-- Second box on the left -->
-  <div class="box box-left">
-    <p>المؤشرات والمتابعات الصحية</p>
-  </div>
+    <div class="box box-right">
+        <p>بيانات القياسات الحيوية</p>
+    </div>
 
-  <!-- Right Table below the right box -->
-  <div class="table-right">
-    <table>
-      <tbody>
-        <tr>
-          <td class="image-cell"><img src="Heart rate.png" alt="Logo 1"></td>
-          <td>معدل ضربات القلب</td>
-          <td>80 bpm</td>
-        </tr>
-        <tr>
-          <td class="image-cell"><img src="Blood oxygen.png" alt="Logo 2"></td>
-          <td>نسبة الاكسجين بالدم</td>
-          <td>98%</td>
-        </tr>
-        <tr>
-          <td class="image-cell"><img src="Temperature.png" alt="Logo 3"></td>
-          <td>درجة الحرارة</td>
-          <td>37°C</td>
-        </tr>
-        <tr>
-          <td class="image-cell"><img src="Sweat rate.png" alt="Logo 4"></td>
-          <td>معدل التعرق</td>
-          <td>5%</td>
-        </tr>
-        <!-- New row for معدل السكر -->
-        <tr>
-          <td class="image-cell"><img src="Sugar level.png" alt="Logo 5"></td>
-          <td>معدل السكر</td>
-          <td>90 mg/dL</td> <!-- Example value -->
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="box box-left">
+        <p>المؤشرات والمتابعات الصحية</p>
+    </div>
 
-  <!-- Left Table below the left box -->
-  <div class="table-left">
-    <table>
-      <tbody>
-        <tr>
-          <td class="image-cell"><img src="Fall Detection.png" alt="Logo 5"></td>
-          <td>اكتشاف السقوط</td>
-          <td>فعال</td>
-        </tr>
-        <tr>
-          <td class="image-cell"><img src="Seizures.png" alt="Logo 6"></td>
-          <td>النوبات العصبية</td>
-          <td>لا يوجد</td>
-        </tr>
-        <tr>
-          <td class="image-cell"><img src="Mood.png" alt="Logo 7"></td>
-          <td>الحالة المزاجية</td>
-          <td>مستقر</td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    <div class="table-right">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Heart rate.png" alt="Logo 1"></td>
+                    <td>معدل ضربات القلب</td>
+                    <td id="heart_rate_value"></td>  </tr>
+                <tr>
+                    <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Blood oxygen.png" alt="Logo 2"></td>
+                    <td>نسبة الاكسجين بالدم</td>
+                    <td id="spo2_value"></td>  </tr>
+                <tr>
+                    <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Temperature.png" alt="Logo 3"></td>
+                    <td>درجة الحرارة</td>
+                    <td id="temperature_value"></td>  </tr>
+                <tr>
+                    <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Sweat rate.png" alt="Logo 4"></td>
+                    <td>معدل التعرق</td>
+                    <td id="gsr_value"></td>  </tr>
+                <tr>
+                    <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Sugar level.png" alt="Logo 5"></td>
+                    <td>معدل السكر</td>
+                    <td id="sugar_level_value"></td>  </tr>
+            </tbody>
+        </table>
+    </div>
 
-  <!-- Menu Button and Options -->
-  <div class="menu-button" onclick="toggleMenu()">خيارات</div>
+    <div class="table-left">
+        <table>
+            <tbody>
+                <tr>
+                    <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Fall Detection.png" alt="Logo 5"></td>
+                    <td>اكتشاف السقوط</td>
+                    <td id="fall_prediction_value"></td>  </tr>
+                <tr>
+                    <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Seizures.png" alt="Logo 6"></td>
+                    <td>النوبات العصبية</td>
+                    <td id="seizure_prediction_value"></td>  </tr>
+                <tr>
+                    <td class="image-cell"><img src="D:/moh/Jops/mostaqel/Moaaz/WebSite/Mood.png" alt="Logo 7"></td>
+                    <td>الحالة المزاجية</td>
+                    <td>مستقر</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
-  <div class="menu-options" id="menu-options">
-    <div onclick="window.location.href='data.html'">سجل البيانات</div>
-    <div onclick="window.location.href='reports.html'">التقارير المجمعة</div>
-  </div>
+    <div class="menu-button" onclick="toggleMenu()">خيارات</div>
 
-  <script>
-    function toggleMenu() {
-      var menu = document.getElementById('menu-options');
-      menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-    }
-  </script>
+    <div class="menu-options" id="menu-options">
+        <div onclick="window.location.href='data.html'">سجل البيانات</div>
+        <div onclick="window.location.href='reports.html'">التقارير المجمعة</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function updateData() {
+                $.ajax({
+                    type: 'POST',
+                    url: '/process_data',  // المسار الذي يستدعي دالة Flask
+                    success: function(data) {
+                        $("#heart_rate_value").text(data.heart_rate + " bpm");
+                        $("#spo2_value").text(data.spo2 + "%");
+                        $("#temperature_value").text(data.temperature + "°C");
+                        $("#gsr_value").text(data.gsr + "%");
+                        $("#sugar_level_value").text(data.sugar_level + " mg/dL");
+                        $("#seizure_prediction_value").text(data.seizure_prediction);
+                        $("#fall_prediction_value").text(data.fall_prediction);
+                    }
+                });
+            }
+
+            updateData(); // تحديث البيانات عند تحميل الصفحة
+            setInterval(updateData, 15000); // تحديث البيانات كل 15 ثانية
+        });
+
+        function toggleMenu() {
+            var menu = document.getElementById('menu-options');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
 
 </body>
 </html>
