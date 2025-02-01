@@ -1,13 +1,13 @@
-# import subprocess
+import subprocess
 
-# def install_requirements(requirements_file):
-#     try:
-#         subprocess.check_call(['pip', 'install', '-r', requirements_file])
-#         print(f"Successfully installed requirements from {requirements_file}")
-#     except subprocess.CalledProcessError as e:
-#         print(f"Error installing requirements: {e}")
+def install_requirements(requirements_file):
+    try:
+        subprocess.check_call(['pip', 'install', '-r', requirements_file])
+        print(f"Successfully installed requirements from {requirements_file}")
+    except subprocess.CalledProcessError as e:
+        print(f"Error installing requirements: {e}")
 
-# install_requirements("requirements.txt")
+install_requirements("requirements.txt")
 
 
 from flask import Flask, jsonify, request, render_template
