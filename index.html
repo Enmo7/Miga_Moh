@@ -69,7 +69,35 @@
       }
       .menu-options div { padding: 10px; cursor: pointer; color: #006f6a; }
     </style>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    function fetchSensorData() {
+        $.ajax({
+            url: "https://huggingface.co/spaces/EngTig/IOT_ess",  //http://127.0.0.1:7860/api/predict/ استبدل بالرابط الفعلي لـ Gradio إذا كان يعمل عن بُعد
+            type: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({}),
+            success: function(response) {
+                $("#heart_rate_value").text(response["معدل ضربات القلب"]);
+                $("#spo2_value").text(response["نسبة الأكسجين في الدم"]);
+                $("#temperature_value").text(response["درجة الحرارة"]);
+                $("#gsr_value").text(response["معدل التعرق"]);
+                $("#sugar_value").text(response["مستوى السكر"]);
+                $("#seizure_status").text(response["حالة النوبات"]);
+                $("#fall_status").text(response["حالة السقوط"]);
+            },
+            error: function(xhr, status, error) {
+                console.error("خطأ في جلب البيانات:", error);
+            }
+        });
+    }
+
+    // تحديث البيانات كل 5 ثوانٍ
+    setInterval(fetchSensorData, 5000);
+
+    // جلب البيانات عند تحميل الصفحة لأول مرة
+    $(document).ready(fetchSensorData);
+</script>
+
 </head>
 <body>
     <img src="images/logo.png" alt="Logo" class="logo">
