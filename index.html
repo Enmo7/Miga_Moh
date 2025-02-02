@@ -243,7 +243,7 @@
             function updateData() {
                 $.ajax({
                     type: 'POST',
-                    url: 'https://engtig-iot-ess.hf.space', // Your Hugging Face Space URL
+                    url: 'https://engtig-iot-ess.hf.space/api/endpoint', // Your Hugging Face Space URL
                     dataType: 'json',
                     success: function (data) {
                         if (data.error) {
