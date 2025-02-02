@@ -189,35 +189,33 @@
         <div onclick="window.location.href='reports.html'">التقارير المجمعة</div>
     </div>
 
-   <script>
-    function fetchSensorData() {
-        $.ajax({
-            url: "https://huggingface.co/spaces/EngTig/IOT_ess",  // استبدل بالرابط الفعلي لـ Gradio إذا كان يعمل عن بُعد
-            type: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({}),
-            success: function(response) {
-                $("#heart_rate_value").text(response["معدل ضربات القلب"]);
-                $("#spo2_value").text(response["نسبة الأكسجين في الدم"]);
-                $("#temperature_value").text(response["درجة الحرارة"]);
-                $("#gsr_value").text(response["معدل التعرق"]);
-                $("#sugar_value").text(response["مستوى السكر"]);
-                $("#seizure_status").text(response["حالة النوبات"]);
-                $("#fall_status").text(response["حالة السقوط"]);
-            },
-            error: function(xhr, status, error) {
-                console.error("خطأ في جلب البيانات:", error);
+    <script>
+        $(document).ready(function() {
+            function updateData() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'https://huggingface.co/spaces/EngTig/IOT_ess',  // المسار الذي يستدعي دالة Flask
+                    success: function(data) {
+                        $("#heart_rate_value").text(data.heart_rate + " bpm");
+                        $("#spo2_value").text(data.spo2 + "%");
+                        $("#temperature_value").text(data.temperature + "°C");
+                        $("#gsr_value").text(data.gsr + "%");
+                        $("#sugar_level_value").text(data.sugar_level + " mg/dL");
+                        $("#seizure_prediction_value").text(data.seizure_prediction);
+                        $("#fall_prediction_value").text(data.fall_prediction);
+                    }
+                });
             }
+
+            updateData(); // تحديث البيانات عند تحميل الصفحة
+            setInterval(updateData, 15000); // تحديث البيانات كل 15 ثانية
         });
-    }
 
-    // تحديث البيانات كل 5 ثوانٍ
-    setInterval(fetchSensorData, 5000);
-
-    // جلب البيانات عند تحميل الصفحة لأول مرة
-    $(document).ready(fetchSensorData);
-  </script>
-
+        function toggleMenu() {
+            var menu = document.getElementById('menu-options');
+            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+        }
+    </script>
 
 </body>
 </html>
