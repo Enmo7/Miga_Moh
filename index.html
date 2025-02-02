@@ -200,42 +200,29 @@
     </div>
 
     <script>
-        $(document).ready(function () {
-            function updateData() {
-                // استدعاء الدالة من ملف JavaScript الخارجي
-                getPrediction().then(data => {
-                    if (data.error) {
-                        console.error("Gradio Error:", data.error);
-                        alert("حدث خطأ في النموذج. الرجاء المحاولة مرة أخرى.");
-                        return;
-                    }
-                    if (data.message) {
-                        console.warn("Gradio Message:", data.message);
-                        alert(data.message);
-                        return;
-                    }
-
-                    $("#heart_rate_value").text(data.معدل_ضربات_القلب + " bpm");
-                    $("#spo2_value").text(data.نسبة_الأكسجين_في_الدم + "%");
-                    $("#temperature_value").text(data.درجة_الحرارة + "°C");
-                    $("#gsr_value").text(data.معدل_التعرق + "%");
-                    $("#sugar_level_value").text(data.مستوى_السكر + " mg/dL");
-                    $("#seizure_prediction_value").text(data.حالة_النوبات);
-                    $("#fall_prediction_value").text(data.حالة_السقوط);
-                }).catch(error => {
-                    console.error("Error fetching data:", error);
-                    alert("حدث خطأ أثناء جلب البيانات. الرجاء المحاولة مرة أخرى.");
-                });
-            }
-
-            updateData(); // تحديث البيانات عند تحميل الصفحة
-            setInterval(updateData, 30000); // تحديث البيانات كل 30 ثانية
-
-            function toggleMenu() {
-                var menu = document.getElementById('menu-options');
-                menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-            }
-        });
+       fetch('https://engtig-iot-ess.hf.space/gradio_api/call/predict', {
+       method: 'POST',
+       headers: {
+        'Content-Type': 'application/json'
+        },
+       body: JSON.stringify({ "data": [] }) // Or your actual input data
+       })
+       .then(response => response.json())
+       .then(data => {
+           console.log("Data from Gradio API:", data);
+           // Update your website with the received data
+           $("#heart_rate_value").text(data.معدل_ضربات_القلب + " bpm");
+           $("#spo2_value").text(data.نسبة_الأكسجين_في_الدم + "%");
+           $("#temperature_value").text(data.درجة_الحرارة + "°C");
+           $("#gsr_value").text(data.معدل_التعرق + "%");
+           $("#sugar_level_value").text(data.مستوى_السكر + " mg/dL");
+           $("#seizure_prediction_value").text(data.حالة_النوبات);
+           $("#fall_prediction_value").text(data.حالة_السقوط);
+       })
+      .catch(error => {
+          console.error("Error fetching data:", error);
+          alert("Error fetching data. Please try again.");
+      });
     </script>
 
 </body>
