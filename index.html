@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,120 +9,161 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
-       body {
-      height: 100vh;
-      margin: 0;
-      background: linear-gradient(to bottom, #40e0d0, #ffffff); /* Turquoise to white */
-      font-family: 'Cairo', sans-serif; /* Apply Cairo font */
-      text-align: center;
-      padding: 0; /* Removed unnecessary padding */
-    }
-    h1 {
-      color: #333;
-      font-size: 48px; /* Make the main title larger */
-      font-weight: bold; /* Make the main title bold */
-      padding-top: 50px;
-    }
-    /* Logo at the top-left */
-    .logo {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      width: 100px; /* Adjust the logo size */
-      height: auto;
-    }
-    .box {
-      position: absolute; /* Position it absolutely on the page */
-      top: 160px; /* Adjust this value for desired vertical position */
-      background-color: #006f6a; /* Dark turquoise color */
-      border-radius: 30px; /* Rounded corners */
-      padding: 20px; /* Space inside the box */
-      width: 250px; /* Set a fixed width for the box */
-      text-align: center; /* Center the text inside the box */
-      font-size: 22px; /* Font size inside the box */
-      color: white; /* White text */
-      font-weight: bold; /* Make the text bold */
-    }
-    /* Right box */
-    .box-right {
-      right: 100px; /* Position the first box on the right side */
-    }
-    /* Left box */
-    .box-left {
-      left: 100px; /* Position the second box on the left side */
-    }
-    /* Right Table styling */
-    .table-right {
-      position: absolute;
-      top: 280px; /* 20px below the right box */
-      right: 20px; /* 20px from the right side */
-      width: calc(40% - 70px); /* Set the table width to 50% of the page minus 70px */
-      border-collapse: collapse;
-      margin-top: 20px; /* 20px gap between the box and the table */
-      text-align: center;
-      height: calc(40vh - 100px); /* Table extends to the bottom of the page */
-    }
-    td {
-      padding: 20px;
-      font-size: 18px;
-    }
-    .image-cell img {
-      width: 50px; /* Set the image size for logo */
-      height: 50px;
-      object-fit: contain; /* Maintain aspect ratio without stretching */
-      background-color: transparent; /* Ensure no background color */
-    }
+        body {
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(to bottom, #40e0d0, #ffffff);
+            /* Turquoise to white */
+            font-family: 'Cairo', sans-serif;
+            /* Apply Cairo font */
+            text-align: center;
+            padding: 0;
+            /* Removed unnecessary padding */
+        }
 
-    /* Left Table styling */
-    .table-left {
-      position: absolute;
-      top: 350px; /* 20px below the left box */
-      left: 0px; /* Position the table on the left side */
-      width: calc(40% - 70px); /* Set the table width */
-      border-collapse: collapse;
-      margin-top: 20px; /* 20px gap between the box and the table */
-      text-align: center;
-      height: calc(50vh - 100px); /* Table extends to the bottom of the page */
-    }
-    
-    /* Menu Button and Dropdown */
-    .menu-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background-color: #006f6a;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-size: 16px;
-    }
+        h1 {
+            color: #333;
+            font-size: 48px;
+            /* Make the main title larger */
+            font-weight: bold;
+            /* Make the main title bold */
+            padding-top: 50px;
+        }
 
-    .menu-options {
-      display: none;
-      position: absolute;
-      top: 60px;
-      right: 20px;
-      background-color: white;
-      border: 1px solid #006f6a;
-      border-radius: 5px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      z-index: 100;
-    }
+        /* Logo at the top-left */
+        .logo {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100px;
+            /* Adjust the logo size */
+            height: auto;
+        }
 
-    .menu-options div {
-      padding: 10px;
-      cursor: pointer;
-      font-size: 16px;
-      color: #006f6a;
-    }
+        .box {
+            position: absolute;
+            /* Position it absolutely on the page */
+            top: 160px;
+            /* Adjust this value for desired vertical position */
+            background-color: #006f6a;
+            /* Dark turquoise color */
+            border-radius: 30px;
+            /* Rounded corners */
+            padding: 20px;
+            /* Space inside the box */
+            width: 250px;
+            /* Set a fixed width for the box */
+            text-align: center;
+            /* Center the text inside the box */
+            font-size: 22px;
+            /* Font size inside the box */
+            color: white;
+            /* White text */
+            font-weight: bold;
+            /* Make the text bold */
+        }
 
-    .menu-options div:hover {
-      background-color: #f0f0f0;
-    }
+        /* Right box */
+        .box-right {
+            right: 100px;
+            /* Position the first box on the right side */
+        }
+
+        /* Left box */
+        .box-left {
+            left: 100px;
+            /* Position the second box on the left side */
+        }
+
+        /* Right Table styling */
+        .table-right {
+            position: absolute;
+            top: 280px;
+            /* 20px below the right box */
+            right: 20px;
+            /* 20px from the right side */
+            width: calc(40% - 70px);
+            /* Set the table width to 50% of the page minus 70px */
+            border-collapse: collapse;
+            margin-top: 20px;
+            /* 20px gap between the box and the table */
+            text-align: center;
+            height: calc(40vh - 100px);
+            /* Table extends to the bottom of the page */
+        }
+
+        td {
+            padding: 20px;
+            font-size: 18px;
+        }
+
+        .image-cell img {
+            width: 50px;
+            /* Set the image size for logo */
+            height: 50px;
+            object-fit: contain;
+            /* Maintain aspect ratio without stretching */
+            background-color: transparent;
+            /* Ensure no background color */
+        }
+
+        /* Left Table styling */
+        .table-left {
+            position: absolute;
+            top: 350px;
+            /* 20px below the left box */
+            left: 0px;
+            /* Position the table on the left side */
+            width: calc(40% - 70px);
+            /* Set the table width */
+            border-collapse: collapse;
+            margin-top: 20px;
+            /* 20px gap between the box and the table */
+            text-align: center;
+            height: calc(50vh - 100px);
+            /* Table extends to the bottom of the page */
+        }
+
+        /* Menu Button and Dropdown */
+        .menu-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #006f6a;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .menu-options {
+            display: none;
+            position: absolute;
+            top: 60px;
+            right: 20px;
+            background-color: white;
+            border: 1px solid #006f6a;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 100;
+        }
+
+        .menu-options div {
+            padding: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            color: #006f6a;
+        }
+
+        .menu-options div:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>  </head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
 <body>
     <img src="logo.png" alt="Logo" class="logo">
 
@@ -141,23 +183,28 @@
                 <tr>
                     <td class="image-cell"><img src="Heart rate.png" alt="Logo 1"></td>
                     <td>معدل ضربات القلب</td>
-                    <td id="heart_rate_value"></td>  </tr>
+                    <td id="heart_rate_value"></td>
+                </tr>
                 <tr>
                     <td class="image-cell"><img src="Blood oxygen.png" alt="Logo 2"></td>
                     <td>نسبة الاكسجين بالدم</td>
-                    <td id="spo2_value"></td>  </tr>
+                    <td id="spo2_value"></td>
+                </tr>
                 <tr>
                     <td class="image-cell"><img src="Temperature.png" alt="Logo 3"></td>
                     <td>درجة الحرارة</td>
-                    <td id="temperature_value"></td>  </tr>
+                    <td id="temperature_value"></td>
+                </tr>
                 <tr>
                     <td class="image-cell"><img src="Sweat rate.png" alt="Logo 4"></td>
                     <td>معدل التعرق</td>
-                    <td id="gsr_value"></td>  </tr>
+                    <td id="gsr_value"></td>
+                </tr>
                 <tr>
                     <td class="image-cell"><img src="Sugar level.png" alt="Logo 5"></td>
                     <td>معدل السكر</td>
-                    <td id="sugar_level_value"></td>  </tr>
+                    <td id="sugar_level_value"></td>
+                </tr>
             </tbody>
         </table>
     </div>
@@ -168,11 +215,13 @@
                 <tr>
                     <td class="image-cell"><img src="Fall Detection.png" alt="Logo 5"></td>
                     <td>اكتشاف السقوط</td>
-                    <td id="fall_prediction_value"></td>  </tr>
+                    <td id="fall_prediction_value"></td>
+                </tr>
                 <tr>
                     <td class="image-cell"><img src="Seizures.png" alt="Logo 6"></td>
                     <td>النوبات العصبية</td>
-                    <td id="seizure_prediction_value"></td>  </tr>
+                    <td id="seizure_prediction_value"></td>
+                </tr>
                 <tr>
                     <td class="image-cell"><img src="Mood.png" alt="Logo 7"></td>
                     <td>الحالة المزاجية</td>
@@ -190,32 +239,49 @@
     </div>
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
             function updateData() {
                 $.ajax({
                     type: 'POST',
-                    url: 'https://huggingface.co/spaces/EngTig/IOT_ess',  // المسار الذي يستدعي دالة Flask
-                    success: function(data) {
-                        $("#heart_rate_value").text(data.heart_rate + " bpm");
-                        $("#spo2_value").text(data.spo2 + "%");
-                        $("#temperature_value").text(data.temperature + "°C");
-                        $("#gsr_value").text(data.gsr + "%");
-                        $("#sugar_level_value").text(data.sugar_level + " mg/dL");
-                        $("#seizure_prediction_value").text(data.seizure_prediction);
-                        $("#fall_prediction_value").text(data.fall_prediction);
+                    url: 'https://huggingface.co/spaces/EngTig/IOT_ess', // Your Hugging Face Space URL
+                    dataType: 'json',
+                    success: function (data) {
+                        if (data.error) {
+                            console.error("Gradio Error:", data.error);
+                            alert("حدث خطأ في النموذج. الرجاء المحاولة مرة أخرى.");
+                            return;
+                        }
+                        if (data.message) {
+                            console.warn("Gradio Message:", data.message);
+                            alert(data.message);
+                            return;
+                        }
+
+                        $("#heart_rate_value").text(data.معدل_ضربات_القلب + " bpm");
+                        $("#spo2_value").text(data.نسبة_الأكسجين_في_الدم + "%");
+                        $("#temperature_value").text(data.درجة_الحرارة + "°C");
+                        $("#gsr_value").text(data.معدل_التعرق + "%");
+                        $("#sugar_level_value").text(data.مستوى_السكر + " mg/dL");
+                        $("#seizure_prediction_value").text(data.حالة_النوبات);
+                        $("#fall_prediction_value").text(data.حالة_السقوط);
+                    },
+                    error: function (xhr, status, error) {
+                        console.error("AJAX Error:", status, error);
+                        alert("حدث خطأ أثناء جلب البيانات. الرجاء المحاولة مرة أخرى.");
                     }
                 });
             }
 
-            updateData(); // تحديث البيانات عند تحميل الصفحة
-            setInterval(updateData, 15000); // تحديث البيانات كل 15 ثانية
-        });
+            updateData();
+            setInterval(updateData, 30000);
 
-        function toggleMenu() {
-            var menu = document.getElementById('menu-options');
-            menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
-        }
+            function toggleMenu() {
+                var menu = document.getElementById('menu-options');
+                menu.style.display = (menu.style.display === 'block') ? 'none' : 'block';
+            }
+        });
     </script>
 
 </body>
+
 </html>
